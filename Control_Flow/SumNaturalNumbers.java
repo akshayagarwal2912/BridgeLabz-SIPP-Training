@@ -25,6 +25,6 @@ public class SumNaturalNumbers {
         if (sum == formulaSum)          // Comparing both results
             System.out.println("Equal Results");
         else
-            System.out.println("Unequal Results");
+            System.out.println("Unequal Results");// temporary change to test the code
     }
 }
