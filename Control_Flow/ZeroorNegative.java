@@ -11,6 +11,6 @@ public class ZeroorNegative {
                 break; // Exit the loop if the number is zero or negative
             }
         }
-        System.out.println("Sum of numbers entered: " + sum);
+        System.out.println("Sum of numbers entered: " + sum);//temporary change to test the code
     }
 }
