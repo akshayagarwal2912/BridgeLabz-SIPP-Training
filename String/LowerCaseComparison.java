@@ -40,7 +40,7 @@ public class LowerCaseComparison {
         // Compare both strings
         boolean isSame = compareStrings(builtInLower, customLower);
 
-        // Display result
+        // Display results
         System.out.println("\nBuilt-in lowercase: " + builtInLower);
         System.out.println("Custom lowercase   : " + customLower);
         System.out.println("Strings Match?     : " + isSame);
