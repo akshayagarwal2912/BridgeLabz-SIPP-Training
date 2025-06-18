@@ -19,8 +19,7 @@ public class ArrayIndex{
         } catch (RuntimeException e) {
             System.out.println("Caught RuntimeException: " + e.getMessage());
         }
-    }
-
+    }//temp comment
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
