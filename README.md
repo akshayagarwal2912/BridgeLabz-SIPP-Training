@@ -82,5 +82,28 @@ Each entry includes concepts covered, skills practiced, and links to the exact c
 
 ---
 
+### 📅 28/06/25 (Sat) – Day 5 – Completing Pending Backlog Work  
+*Topics*: Today was the first day of the workshop. Created new repository named WorkShop to perform tasks, continued revising all the topics covered so far.
+🔗 [Code](https://github.com/akshayagarwal2912/BridgeLabz-SIPP-Training/tree/OOPs/Object_Modelling)
+
+---
+
+### 📅 01/07/25 (Tue) – Day 6 – Inheritance and its Types  
+*Topics*: Inheritance definition and its types including single, multilevel, hierarchical, multiple, and hybrid inheritance.
+🔗 [Code](https://github.com/akshayagarwal2912/BridgeLabz-SIPP-Training/tree/OOPs/Inheritance)
+
+---
+
+### 📅 02/07/25 (Wed) – Day 7 – OOPs Pillars  
+*Topics*: Today, we learned about polymorphism, encapsulation, abstraction, and interfaces—these help make code easier to use and understand.
+🔗 [Code](TBD)
+
+---
+
+### 📅 03/07/25 (Thu) – Day 7 – Linked Lists  
+*Topics*: TBD
+🔗 [Code](TBD)
+
+---
 ## 📝 Note:
 Each topic’s code is organized in its dedicated branch — but this main README connects everything.
