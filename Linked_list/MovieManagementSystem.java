@@ -216,7 +216,7 @@ public class MovieManagementSystem {
                     System.out.println("Exiting...");
                     break;
                 default:
-                    System.out.println("Invalid choice.");
+                    System.out.println("Invalid  choice.");
             }
         } while (choice != 0);
         sc.close();
