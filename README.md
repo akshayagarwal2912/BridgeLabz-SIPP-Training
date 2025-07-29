@@ -100,10 +100,51 @@ Each entry includes concepts covered, skills practiced, and links to the exact c
 
 ---
 
-### 📅 03/07/25 (Thu) – Day 7 – Linked Lists  
-*Topics*: TBD
+## DSA Branch 📂
+
+### 📅 04/07/25 (Thu) – Day 1 – Linked Lists 
+Topics: - Singly Linked list, Doubly Linked list, Circular Linked list implementations  
+🔗 [Code](https://github.com/akshayagarwal2912/BridgeLabz-SIPP-Training/tree/DSA/Linked_list)
+
+---
+
+### 📅 08/07/25 (Mon) – Day 2 – Stack , Queue, HashMap and Hashing Function 
+Topics: - Stack , Queue, HashMap and Hashing Function
+🔗 [Code](https://github.com/akshayagarwal2912/BridgeLabz-SIPP-Training/tree/DSA/Stack)
+
+---
+
+### 📅 09/07/25 (Tue) – Day 3 – Sorting Algorithms
+Topics:-Bubble Sort,insertion Sort,Merge Sort,Quick sort
+🔗 [Code](https://github.com/akshayagarwal2912/BridgeLabz-SIPP-Training/tree/DSA/Sorting_Algorithms)
+
+---
+
+### 📅 11/07/25 (Thu) – Day 4 – Searching Algorithms 
+Topics: -  Linear and Binary Search 
 🔗 [Code](TBD)
 
 ---
+
+### 📅 12/07/25 (Fri) – Day 5 –  Algorithm's Runtime Analysis & Big-O Notation
+Topics: - General Algorithm Best Practices,Time and space Complexity Optimization  
+🔗 [Code](https://github.com/akshayagarwal2912/BridgeLabz-SIPP-Training/tree/DSA/Big_O_Notation)
+
+---
+
+### Generics and Collections  Branch 📂
+
+### 📅 21/07/25 (Mon) – Day 1 –  Java Generics
+Topics: - Introduction to Generics,Type Parameters,Generic Classes,Generic Methods,Bounded Type Parameters,Wildcards  
+🔗 [Code](TBD)
+
+---
+
+### 📅 24/07/25 (Thu) – Day 2 –  Collections
+Topics: - Overview of Collections Framework,What is the Collections Framework?,Hierarchy of Collections Framework,List Interface and Implementing Classes,Set Interface and Implementing Classes,Queue and Deque Interfaces,Map Interface and Its Implementations,comparison of Different Implementations,Real-World Use Cases and Best Practices.  
+🔗 [Code](TBD)
+
+---
+
 ## 📝 Note:
 Each topic’s code is organized in its dedicated branch — but this main README connects everything.
