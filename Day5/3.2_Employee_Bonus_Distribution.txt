@@ -1,0 +1,28 @@
+Start
+
+Data structure:
+    Employee has:
+        name
+        department
+        rating
+        baseSalary
+
+Input:
+    List<Employee> employees
+
+Function calculateBonusDistribution(employees):
+
+    Group employees by department
+
+    For each department:
+        totalSalary = sum of baseSalary of all employees
+        bonusPool = 10% of totalSalary
+
+        totalRatings = sum of ratings of all employees in department
+
+        For each employee in department:
+            share = (employee.rating / totalRatings)
+            bonus = bonusPool * share
+            Print employee.name, department, bonus
+
+End

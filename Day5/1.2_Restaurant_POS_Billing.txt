@@ -1,0 +1,122 @@
+Start
+
+Define interface TaxCalculator
+    Method calculateTax(price)
+End interface
+
+Define class FoodTax implements TaxCalculator
+    Method calculateTax(price)
+        Return price * 0.05
+End class
+
+Define class BeverageTax implements TaxCalculator
+    Method calculateTax(price)
+        Return price * 0.12
+End class
+
+Define class ImportedTax implements TaxCalculator
+    Method calculateTax(price)
+        baseTax = price * 0.05
+        customsDuty = price * 0.10
+        Return baseTax + customsDuty
+End class
+
+Define class LuxuryTax implements TaxCalculator   // New type can be added easily
+    Method calculateTax(price)
+        Return price * 0.20
+End class
+
+
+Define interface DiscountPolicy
+    Method applyDiscount(amount)
+End interface
+
+Define class NoDiscount implements DiscountPolicy
+    Method applyDiscount(amount)
+        Return amount
+End class
+
+Define class FlatDiscount implements DiscountPolicy
+    Attribute: flatAmount
+    Constructor(flatAmount)
+        Set this.flatAmount = flatAmount
+    Method applyDiscount(amount)
+        Return amount - flatAmount
+End class
+
+Define class PercentageDiscount implements DiscountPolicy
+    Attribute: percent
+    Constructor(percent)
+        Set this.percent = percent
+    Method applyDiscount(amount)
+        Return amount - (amount * percent / 100)
+End class
+
+Define class BuyOneGetOne implements DiscountPolicy   // New scheme added
+    Method applyDiscount(amount)
+        // For simplicity, assume one item is free
+        Return amount / 2
+End class
+
+
+Define class MenuItem
+    Attributes: name, price, taxCalculator
+    Constructor(name, price, taxCalculator)
+        Set this.name = name
+        Set this.price = price
+        Set this.taxCalculator = taxCalculator
+    Method calculateTotal()
+        tax = taxCalculator.calculateTax(price)
+        Return price + tax
+End class
+
+
+Define class Bill
+    Attributes: items, discountPolicy
+    Constructor(discountPolicy)
+        Set items = empty list
+        Set this.discountPolicy = discountPolicy
+    Method addItem(item)
+        Add item to items
+    Method calculateBill()
+        total = 0
+        For each item in items
+            total = total + item.calculateTotal()
+        discountedTotal = discountPolicy.applyDiscount(total)
+        Return discountedTotal
+End class
+
+
+Main
+    // Scenario 1
+    Create item1 = MenuItem("Paneer Tikka", 200, new FoodTax())
+    Create item2 = MenuItem("Coke", 100, new BeverageTax())
+    Create item3 = MenuItem("Imported Cheese", 500, new ImportedTax())
+
+    Create bill1 = Bill(new PercentageDiscount(10))
+    bill1.addItem(item1)
+    bill1.addItem(item2)
+    bill1.addItem(item3)
+
+    Print "Final Bill Amount (Scenario 1): " + bill1.calculateBill()
+
+
+    // Scenario 2 - Buy 1 Get 1
+    Create item4 = MenuItem("Pizza", 300, new FoodTax())
+    Create item5 = MenuItem("Pizza", 300, new FoodTax())
+
+    Create bill2 = Bill(new BuyOneGetOne())
+    bill2.addItem(item4)
+    bill2.addItem(item5)
+
+    Print "Final Bill Amount (Scenario 2 - BOGO): " + bill2.calculateBill()
+
+
+    // Scenario 3 - Luxury Tax introduced
+    Create item6 = MenuItem("Luxury Wine", 2000, new LuxuryTax())
+    Create bill3 = Bill(new NoDiscount())
+    bill3.addItem(item6)
+
+    Print "Final Bill Amount (Scenario 3 - Luxury Tax): " + bill3.calculateBill()
+
+End

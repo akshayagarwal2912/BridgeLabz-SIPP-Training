@@ -1,0 +1,33 @@
+Start
+
+Create a root node of Trie
+
+Function insert(word, popularity)
+    Start from root
+    For each character in word
+        If character not present in current node’s children
+            Create new node
+        Move to that child node
+    Mark current node as end of word
+    Store popularity score
+
+Function searchPrefix(prefix)
+    Start from root
+    For each character in prefix
+        If character not present in current node’s children
+            Return empty list
+        Move to that child node
+    From this node, collect all words with DFS
+
+Function collectWords(node, prefix, results)
+    If node is end of word
+        Add (prefix, popularity) to results
+    For each child character in node
+        Recursively call collectWords(child, prefix + character, results)
+
+Function getSuggestions(prefix, N)
+    matches = searchPrefix(prefix)
+    Sort matches by popularity (highest first)
+    Return top N words
+
+End

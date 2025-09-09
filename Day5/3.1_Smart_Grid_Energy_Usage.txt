@@ -1,0 +1,20 @@
+Start
+
+Create data structure:
+    Map<Zone, Map<Day, List<Reading>>> energyData
+
+Function addReading(zone, day, reading)
+    If zone not in energyData
+        Add new Map for this zone
+    If day not in energyData[zone]
+        Add new List for this day
+    Add reading to energyData[zone][day]
+
+Function findPeakLoad()
+    For each zone in energyData
+        For each day in energyData[zone]
+            readingsList = energyData[zone][day]
+            peak = maximum value in readingsList
+            Print "Zone:", zone, "Day:", day, "Peak Load:", peak
+
+End

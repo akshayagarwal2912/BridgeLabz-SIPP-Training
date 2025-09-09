@@ -1,0 +1,62 @@
+Start
+
+Define class Server
+    Attribute: name
+    Constructor(name)
+        Set this.name = name
+    Method getName()
+        Return name
+End class
+
+Define class LoadBalancer
+    Attribute: queueOfServers
+    Constructor()
+        Initialize queueOfServers as empty queue
+    
+    Method addServer(server)
+        Enqueue server into queueOfServers
+    
+    Method removeServer(serverName)
+        Create tempQueue as empty queue
+        While queueOfServers is not empty
+            Dequeue server from queueOfServers
+            If server.name != serverName
+                Enqueue server into tempQueue
+        Set queueOfServers = tempQueue
+    
+    Method assignRequest(requestId)
+        If queueOfServers is empty
+            Print "No servers available for " + requestId
+        Else
+            Dequeue server from queueOfServers
+            Print requestId + " → " + server.getName()
+            Enqueue server back into queueOfServers
+End class
+
+Main
+    Create LoadBalancer lb
+    Create Server("S1")
+    Create Server("S2")
+    Create Server("S3")
+    Call lb.addServer(S1)
+    Call lb.addServer(S2)
+    Call lb.addServer(S3)
+
+    Call lb.assignRequest("R1")
+    Call lb.assignRequest("R2")
+    Call lb.assignRequest("R3")
+
+    Create Server("S4")
+    Call lb.addServer(S4)
+
+    Call lb.assignRequest("R4")
+    Call lb.assignRequest("R5")
+    Call lb.assignRequest("R6")
+
+    Call lb.removeServer("S2")
+
+    Call lb.assignRequest("R7")
+    Call lb.assignRequest("R8")
+    Call lb.assignRequest("R9")
+
+End

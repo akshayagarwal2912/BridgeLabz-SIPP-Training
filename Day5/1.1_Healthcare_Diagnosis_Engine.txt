@@ -1,0 +1,62 @@
+Start
+Define interface DiagnosisStrategy
+    Method diagnose(symptoms : List of String)
+End interface
+
+Define class RuleBasedDiagnosis implements DiagnosisStrategy
+    Method diagnose(symptoms)
+        If symptoms contains "fever" AND "cough"
+            Print "Possible Diseases: Flu, COVID-19"
+        Else
+            Print "No match found"
+End class
+
+Define class AIBasedDiagnosis implements DiagnosisStrategy
+    Method diagnose(symptoms)
+        If symptoms contains "headache" AND "dizziness"
+            Print "Possible Diseases: Migraine, Vertigo"
+        Else
+            Print "AI could not predict"
+End class
+
+Define class ProbabilityBasedDiagnosis implements DiagnosisStrategy
+    Method diagnose(symptoms)
+        Print "Calculating probabilities based on historical data..."
+        Print "Possible Diseases: Common Cold (60%), Flu (40%)"
+End class
+
+Define class DiagnosisContext
+    Attribute: strategy (DiagnosisStrategy)
+
+    Constructor(strategy)
+        Set this.strategy = strategy
+
+    Method setStrategy(strategy)
+        Set this.strategy = strategy
+
+    Method executeDiagnosis(symptoms)
+        Call strategy.diagnose(symptoms)
+End class
+
+Main
+    // Scenario 1: General Medicine
+    Create symptoms1 = ["fever", "cough", "fatigue"]
+    Create context = new DiagnosisContext(new RuleBasedDiagnosis())
+    Call context.executeDiagnosis(symptoms1)
+
+    // Scenario 2: Neurology
+    Create symptoms2 = ["headache", "dizziness", "nausea"]
+    Call context.setStrategy(new AIBasedDiagnosis())
+    Call context.executeDiagnosis(symptoms2)
+
+    // Scenario 3: Future extension (without modifying old code)
+    Define class GeneticPatternDiagnosis implements DiagnosisStrategy
+        Method diagnose(symptoms)
+            Print "Analyzing genetic patterns..."
+            Print "Possible Diseases: Genetic Disorder X, Genetic Disorder Y"
+    End class
+
+    Create symptoms3 = ["muscle weakness", "fatigue"]
+    Call context.setStrategy(new GeneticPatternDiagnosis())
+    Call context.executeDiagnosis(symptoms3)
+End
